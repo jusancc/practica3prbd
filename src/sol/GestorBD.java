@@ -7,11 +7,21 @@ import java.sql.*;
 
 public class GestorBD extends AbstractDBManager {
 
+    static{
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
     public Articulo getArticulo(String codigo) throws ExcepcionDeAplicacion {
         Articulo articulo = null;
         Connection con = null;
         try {
-            con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:pbd",
+            con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.56.101:1521:pbd",
                     "prbd", "prbdprbd");
             Statement stm = con.createStatement();
             String sql = "SELECT nombre, PVP FROM Articulo WHERE codigo = '" + codigo + "'";
