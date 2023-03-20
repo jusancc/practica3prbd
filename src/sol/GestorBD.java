@@ -76,3 +76,4 @@ public class GestorBD extends AbstractDBManager {
         return cl;
     }
 }
+
