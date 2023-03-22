@@ -54,7 +54,7 @@ public class Practica3 {
 
         GestorBD gbd = null;
         gbd = new GestorBD();
-        GregorianCalendar fecha = new GregorianCalendar(2022, 3, 1, 12, 0, 0);
+        GregorianCalendar fecha = new GregorianCalendar(2022, 3, 22, 12, 0, 0);
 
         try {
             Cliente c = gbd.getCliente("210010/02");
